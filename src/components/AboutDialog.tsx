@@ -50,7 +50,7 @@ function AboutDialog({ language, onClose, onOpenGuide }: AboutDialogProps) {
         <div className="about-dialog-product">
           <img
             className="about-dialog-mark"
-            src="/xiangrui-logo.png"
+            src="/favicon.svg"
             alt=""
             aria-hidden="true"
           />

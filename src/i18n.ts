@@ -269,7 +269,7 @@ export const UI_TEXT = {
       productLinks: [
         {
           label: '项目 GitHub',
-          href: 'https://github.com/thinking-one-hour-everyday/excalicord',
+          href: 'https://github.com/idonecc/whiteboard-recorder',
         },
         {
           label: 'Excalidraw',
@@ -376,7 +376,7 @@ export const UI_TEXT = {
     },
   },
   en: {
-    documentTitle: 'Xiangrui Whiteboard Recorder',
+    documentTitle: 'Whiteboard Recorder',
     language: {
       ariaLabel: 'Switch language',
       menuTitle: 'Language',
@@ -413,7 +413,7 @@ export const UI_TEXT = {
       },
     },
     common: {
-      appName: 'Xiangrui Whiteboard Recorder',
+      appName: 'Whiteboard Recorder',
       closeHelpDialog: 'Close help',
     },
     collaboration: {
@@ -502,7 +502,7 @@ export const UI_TEXT = {
       xiangruiSite: 'About',
       xiangruiSiteAria: 'Open website',
       xiangruiSiteHint: 'About',
-      shortcutsIntro: 'Customize Xiangrui Whiteboard Recorder shortcuts. Click a key field, then press a new key combo.',
+      shortcutsIntro: 'Customize Whiteboard Recorder shortcuts. Click a key field, then press a new key combo.',
       shortcutRecorderHint: 'Press new shortcut',
       shortcutResetAll: 'Reset defaults',
       shortcutClear: 'Clear',
@@ -606,7 +606,7 @@ export const UI_TEXT = {
       cursorColor: 'Cursor color:',
       done: 'Done',
       aboutTitle: 'About Whiteboard Recorder',
-      aboutDescription: 'Xiangrui Whiteboard Recorder is a recording-first whiteboard workspace for tutorials, courses, and async explanations. The whiteboard editor is powered by Excalidraw, while recording, camera, library, and workspace experience are being shaped into our own native product system.',
+      aboutDescription: 'Whiteboard Recorder is a recording-first whiteboard workspace for tutorials, courses, and async explanations. The whiteboard editor is powered by Excalidraw, while recording, camera, library, and workspace experience are being shaped into our own native product system.',
       openSourceTitle: 'Open Source & Thanks',
       openSourceIntro: 'We are grateful for these open-source projects and product explorations, and we keep attribution, licenses, and modification notes maintained in the product and project documents.',
       openSourceItems: [
@@ -635,13 +635,13 @@ export const UI_TEXT = {
       guideTitle: 'Operation Guide',
       guideDescription: 'Learn the basics of recording, camera, backgrounds, library, and shortcuts.',
       guideLinkLabel: 'Open guide',
-      guideDialogTitle: 'Xiangrui Whiteboard Recorder Guide',
+      guideDialogTitle: 'Whiteboard Recorder Guide',
       guideCloseLabel: 'Close guide',
       productLinksTitle: 'Links',
       productLinks: [
         {
           label: 'Project GitHub',
-          href: 'https://github.com/thinking-one-hour-everyday/excalicord',
+          href: 'https://github.com/idonecc/whiteboard-recorder',
         },
         {
           label: 'Excalidraw',
@@ -692,7 +692,7 @@ export const UI_TEXT = {
       },
     },
     welcome: {
-      title: 'Welcome to Xiangrui Whiteboard Recorder',
+      title: 'Welcome to Whiteboard Recorder',
       officialHeading: 'Start drawing',
       subtitle: 'Record beautiful whiteboard videos with your face in the corner. Perfect for tutorials, explanations, and async communication.',
       features: [
@@ -739,9 +739,9 @@ export const UI_TEXT = {
     },
     mobile: {
       title: 'Mobile version is in development',
-      description: 'Xiangrui Whiteboard Recorder currently works best in the web version on a computer browser, so the whiteboard, webcam, recording, library, and teleprompter can run properly.',
+      description: 'Whiteboard Recorder currently works best in the web version on a computer browser, so the whiteboard, webcam, recording, library, and teleprompter can run properly.',
       desktopRequired: 'Open the web version on a computer browser',
-      shareText: 'Xiangrui Whiteboard Recorder currently works best in a computer browser',
+      shareText: 'Whiteboard Recorder currently works best in a computer browser',
       actionsLabel: 'Copy the link or share it to open in a computer browser.',
       share: 'Share link',
       copyLink: 'Copy link',
