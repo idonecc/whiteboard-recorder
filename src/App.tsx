@@ -99,7 +99,6 @@ const APPEARANCE_STORAGE_KEY = 'excalicord_appearance_mode';
 const TELEPROMPTER_TEXT_STORAGE_KEY = 'excalicord_teleprompter_text';
 const EXCALIDRAW_LIBRARY_ORIGIN = 'https://libraries.excalidraw.com';
 const EXCALIDRAW_LIBRARY_URL = `${EXCALIDRAW_LIBRARY_ORIGIN}/`;
-const XIANGRUI_WEBSITE_URL = 'https://www.xiangruiai.com';
 const MEDIAPIPE_WASM_URL = 'https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.35/wasm';
 const SELFIE_SEGMENTER_MODEL_URL = 'https://storage.googleapis.com/mediapipe-models/image_segmenter/selfie_segmenter/float16/1/selfie_segmenter.tflite';
 type AppearanceMode = 'light' | 'dark' | 'system';
@@ -4032,32 +4031,6 @@ function App() {
       )}
 
       {showWelcomeGuideHints && (
-        <div className="xiangrui-site-hint excalifont" aria-hidden="true">
-          <svg viewBox="0 0 83 70" fill="none" focusable="false">
-            <path
-              d="M76.814 61.413C62.623 58.781 43.42 53.595 34.376 42.138 25.37 30.73 29.745 13.905 35.542 2.141"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-            />
-            <path
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M35.418.917 23.43 11.87l14.083 1.624L35.418.917Z"
-              fill="currentColor"
-            />
-            <path
-              d="M35.418.917c-2.903 2.654-5.801 5.3-11.988 10.953m11.988-10.953c-4.714 4.309-9.43 8.626-11.988 10.953m0 0c3.73.43 7.452.854 14.083 1.624m-14.083-1.624c5.342.616 10.694 1.243 14.083 1.624m0 0c-.812-5.253-1.612-10.504-2.095-12.577"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-            />
-          </svg>
-          <span>{text.settings.xiangruiSiteHint}</span>
-        </div>
-      )}
-
-      {showWelcomeGuideHints && (
         <div className="about-corner-hint excalifont" aria-hidden="true">
           <span>
             {text.settings.aboutHint.split('\n').map((line) => (
@@ -4100,18 +4073,6 @@ function App() {
           <path d="M12 7.4h.01" />
         </svg>
       </button>
-
-      <a
-        className="xiangrui-site-button"
-        href={XIANGRUI_WEBSITE_URL}
-        target="_blank"
-        rel="noreferrer"
-        aria-label={text.settings.xiangruiSiteAria}
-        data-tooltip={text.settings.xiangruiSiteAria}
-      >
-        <span className="xiangrui-site-button-label">{text.settings.xiangruiSite}</span>
-        <span className="xiangrui-site-button-arrow" aria-hidden="true">↗</span>
-      </a>
 
       <div className="excalidraw-container">
         <Excalidraw
