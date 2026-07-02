@@ -3,7 +3,7 @@
  * Copyright (c) 2025 Smart Teleprompter. Licensed under the MIT License.
  *
  * Local changes:
- * - Scoped the full-screen teleprompter into the Xiangrui whiteboard overlay.
+ * - Scoped the full-screen teleprompter into the whiteboard recorder overlay.
  * - Reworked labels for this app's Chinese/English language switch.
  * - Kept Smart Teleprompter concepts: speech following, auto-scroll, word
  *   highlight, script library, file import, shortcuts, and display settings.
@@ -136,8 +136,8 @@ type PanelStyle = CSSProperties & {
   '--smart-teleprompter-text-alpha': string;
 };
 
-const SETTINGS_STORAGE_KEY = 'xiangrui_smart_teleprompter_settings_v1';
-const SCRIPTS_STORAGE_KEY = 'xiangrui_smart_teleprompter_scripts_v1';
+const SETTINGS_STORAGE_KEY = 'teleprompter_settings_v1';
+const SCRIPTS_STORAGE_KEY = 'teleprompter_scripts_v1';
 const MAX_SCRIPTS = 50;
 const MAX_SPEECH_TOKENS = 18;
 

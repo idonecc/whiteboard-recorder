@@ -240,42 +240,6 @@
   color: inherit;
 }
 
-.xiangrui-site-hint {
-  position: fixed;
-  left: 7.15rem;
-  top: 3.05rem;
-  z-index: 2099;
-  display: flex;
-  align-items: flex-start;
-  gap: 0.25rem;
-  color: rgb(184, 184, 184);
-  font-family: Excalifont, Xiaolai;
-  font-size: 1rem;
-  font-weight: 400;
-  pointer-events: none;
-  user-select: none;
-}
-
-.xiangrui-site-hint > span {
-  display: block;
-  padding-top: 1.05rem;
-  color: inherit;
-  font: inherit;
-  line-height: 1.5;
-  letter-spacing: 0;
-  white-space: nowrap;
-}
-
-.xiangrui-site-hint svg {
-  display: block;
-  width: 4.35rem;
-  height: 3.65rem;
-  flex: 0 0 auto;
-  fill: none;
-  color: inherit;
-  overflow: visible;
-}
-
 .about-corner-button:hover {
   background-color: #f1f0ff;
   color: #1b1b1f;
@@ -296,59 +260,6 @@
   stroke-linejoin: round;
 }
 
-.xiangrui-site-button {
-  position: fixed;
-  left: 4.25rem;
-  top: 1rem;
-  z-index: 2100;
-  min-width: 0;
-  height: 2.25rem;
-  box-sizing: border-box;
-  border: none;
-  border-radius: 0.5rem;
-  background: #ececf4;
-  color: #1b1b1f;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.35rem;
-  padding: 0 0.72rem;
-  cursor: pointer;
-  box-shadow: 0 0 0 1px #ffffff;
-  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'PingFang SC', 'Noto Sans SC', 'Segoe UI', sans-serif;
-  font-size: 0.84rem;
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: 0;
-  text-decoration: none;
-  white-space: nowrap;
-  transition:
-    background-color 0.15s ease,
-    color 0.15s ease,
-    box-shadow 0.15s ease;
-}
-
-.xiangrui-site-button:hover {
-  background-color: #f1f0ff;
-  color: #1b1b1f;
-  text-decoration: none;
-}
-
-.xiangrui-site-button:active {
-  background-color: #f1f0ff;
-  box-shadow: 0 0 0 1px #4440bf;
-}
-
-.xiangrui-site-button-arrow {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 auto;
-  font-size: 0.95rem;
-  line-height: 1;
-  transform: translateY(-0.05rem);
-}
-
 .app-container[data-theme='dark'] .about-corner-button {
   background: hsl(240, 8%, 15%);
   color: #e3e3e8;
@@ -365,51 +276,13 @@
   box-shadow: 0 0 0 1px #d0ccff;
 }
 
-.app-container[data-theme='dark'] .xiangrui-site-button {
-  background: hsl(240, 8%, 15%);
-  color: #e3e3e8;
-  box-shadow: 0 0 0 1px hsl(0, 0%, 7%);
-}
-
-.app-container[data-theme='dark'] .xiangrui-site-button:hover {
-  background: hsl(245, 10%, 21%);
-  color: #e3e3e8;
-}
-
-.app-container[data-theme='dark'] .xiangrui-site-button:active {
-  background: hsl(245, 10%, 21%);
-  box-shadow: 0 0 0 1px #d0ccff;
-}
-
-.app-container[data-theme='dark'] .about-corner-hint {
-  color: rgba(231, 229, 228, 0.5);
-}
-
-.app-container[data-theme='dark'] .xiangrui-site-hint {
+.app-container[data-theme='dark'] .app-container[data-theme='dark'] .app-container[data-theme='dark'] .app-container[data-theme='dark'] .about-corner-hint {
   color: rgba(231, 229, 228, 0.5);
 }
 
 @media (max-width: 760px) {
-  .about-corner-hint,
-  .xiangrui-site-hint {
+  .about-corner-hint {
     display: none;
-  }
-
-  .xiangrui-site-button {
-    left: 4.15rem;
-    padding: 0 0.62rem;
-    font-size: 0.78rem;
-  }
-}
-
-@media (max-width: 420px) {
-  .xiangrui-site-button-label {
-    display: none;
-  }
-
-  .xiangrui-site-button {
-    width: 2.25rem;
-    padding: 0;
   }
 }
 

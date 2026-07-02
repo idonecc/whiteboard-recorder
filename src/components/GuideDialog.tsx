@@ -49,7 +49,7 @@ function GuideDialog({ language, onClose }: GuideDialogProps) {
           <div className="guide-dialog-title-lockup">
             <img
               className="guide-dialog-mark"
-              src="/xiangrui-logo.png"
+              src="/favicon.svg"
               alt=""
               aria-hidden="true"
             />
