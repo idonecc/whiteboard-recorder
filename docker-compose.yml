@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  whiteboard-recorder:
+    build: .
+    container_name: whiteboard-recorder
+    restart: unless-stopped
+    ports:
+      - "18001:80"
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
