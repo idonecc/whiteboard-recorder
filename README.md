@@ -1,66 +1,102 @@
 # Whiteboard Recorder
 
-> A web-based whiteboard recording tool for course explanations, product demos, and async communication.
+> A professional web-based whiteboard recording tool for creating tutorial videos, product demos, and async explanations.
 
-This tool combines whiteboard, webcam, recording viewport, slides, library, and teleprompter in one workspace. Perfect for creating tutorial videos, product demos, course snippets, async explanations, and knowledge cards.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Live Demo](https://img.shields.io/badge/demo-online-brightgreen)](https://aia.bj.cn/whiteboard-recorder)
 
-Live Demo: [https://aia.bj.cn/whiteboard-recorder](https://aia.bj.cn/whiteboard-recorder)
+Whiteboard Recorder combines a powerful whiteboard editor, webcam overlay, teleprompter, and slides system into one unified recording workspace. Perfect for educators, product managers, and content creators.
 
-## Features
+**Live Demo**: [https://aia.bj.cn/whiteboard-recorder](https://aia.bj.cn/whiteboard-recorder)
 
-- **Whiteboard**: Based on Excalidraw, supports hand-drawn graphics, text, images, frames, and library items
-- **Recording Viewport**: Supports 16:9, 4:3, 3:4, 9:16, 1:1, and custom aspect ratios
-- **Slides**: Organize whiteboard content by recording viewport, switch between slides during recording
-- **Webcam**: Webcam bubble with position/size adjustment, circular and square display modes
-- **Teleprompter**: Script support, word-by-word highlighting, lightweight mode, and voice following
-- **Library**: Personal library and public library entrance, add assets to whiteboard
-- **Theme & Language**: Light, dark, system follow, Chinese / English support
-- **Export**: Record and export video files in browser
-- **Mobile Landing**: Shows web-only hint on mobile to avoid confusion
+---
 
-## Requirements
+## ✨ Features
 
-- Node.js 20 or higher
-- npm 10 or higher
-- Latest Chrome or Edge recommended (recording, webcam, and mic capabilities require browser permissions)
-- `localhost` for local dev; HTTPS required for production deployment (browsers may block camera/mic/screen permissions on HTTP)
+### 🎨 Whiteboard Editing
+- Hand-drawn graphics with Excalidraw engine
+- Text, shapes, arrows, frames
+- Image import and library elements
+- Infinite canvas with zoom and pan
 
-## Installation
+### 📹 Recording System
+- **Multiple Aspect Ratios**: 16:9 (YouTube), 4:3 (Classic), 3:4 (Instagram), 9:16 (TikTok), 1:1 (Square), Custom
+- **Browser-based**: No software installation required
+- **MP4 Export**: High-quality H.264 encoding
+- **Recording Controls**: Pause/resume during recording
+
+### 📽️ Slides & Presentation
+- Organize content into slides by viewport
+- Switch between slides during recording
+- Keyboard navigation (← →)
+- Slide preview strip
+
+### 📷 Webcam Overlay
+- Circular or square bubble
+- Draggable positioning
+- Adjustable size
+- Background removal (experimental)
+
+### 📜 Teleprompter
+- Word-by-word highlighting
+- Auto-scroll with voice following
+- Lightweight mode
+- Script persistence
+
+### 🎨 Customization
+- Light / Dark / System themes
+- Chinese / English interface
+- Custom backgrounds and colors
+- Keyboard shortcuts
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- **Node.js** 20+ and **npm** 10+
+- **Modern Browser**: Chrome 90+ or Edge 90+ (required for recording APIs)
+- **HTTPS** required for production (camera/mic permissions)
+
+### Installation
 
 ```bash
+# Clone repository
 git clone https://github.com/idonecc/whiteboard-recorder.git
 cd whiteboard-recorder
+
+# Install dependencies
 npm install
-```
 
-## Local Development
-
-Start dev server:
-
-```bash
+# Start dev server
 npm run dev
 ```
 
-Open the URL shown in terminal with your desktop browser. First-time use of webcam, mic, or screen recording will prompt for permissions.
+Open `http://localhost:5173/whiteboard-recorder/` in your browser.
 
-Basic workflow:
+### First Recording
 
-1. Organize content on whiteboard: draw, add text, import images, or add library elements
-2. Click slides button on right side, add recording viewports
-3. Open webcam, adjust position, size, and shape (circle/square)
-4. Open teleprompter, paste script, enable word highlighting or voice following as needed
-5. Click record, choose 16:9, 4:3, 3:4, 9:16, 1:1, or custom aspect ratio
-6. Start recording, stop when done, and export video
+1. **Prepare Content**: Draw on the whiteboard or import images
+2. **Add Slide**: Click the slides button (right side) to add recording viewport
+3. **Enable Webcam** (optional): Click camera button, allow browser permissions
+4. **Open Teleprompter** (optional): Paste your script
+5. **Start Recording**: Click "● Record", choose aspect ratio
+6. **Stop & Export**: Click stop button, download MP4 file
 
-For detailed guide see [public/docs/operation-guide.md](./public/docs/operation-guide.md).
+📖 **Detailed Guide**: See [Operation Guide](./public/docs/operation-guide.md) for step-by-step instructions.
 
-## Build
+---
+
+## 🏗️ Build & Deploy
+
+### Build for Production
 
 ```bash
 npm run build
 ```
 
-Build output goes to `dist/`.
+Output: `dist/` directory
 
 Preview build locally:
 
@@ -68,44 +104,128 @@ Preview build locally:
 npm run preview
 ```
 
-## Deployment
+### Deployment
 
-This is a pure frontend web app. After build, deploy to any static hosting service.
+This is a **static web app** – deploy to any hosting service:
 
-Common config:
+| Platform | Config |
+|----------|--------|
+| **Vercel** | Auto-detected (Vite) |
+| **Netlify** | Build: `npm run build`, Publish: `dist` |
+| **GitHub Pages** | See [GitHub Actions workflow](.github/workflows/deploy.yml) |
+| **Docker** | See [Dockerfile](./Dockerfile) |
 
-```text
-Project root: .
-Install command: npm install
-Build command: npm run build
-Output directory: dist
+**Important**: 
+- Ensure HTTPS (browsers block camera/mic on HTTP)
+- For subpath deployment, update `base` in `vite.config.ts`
+
+### Docker Deployment
+
+```bash
+# Build image
+docker build -t whiteboard-recorder .
+
+# Run container
+docker run -d -p 8080:80 whiteboard-recorder
 ```
 
-When deployed to production domain, ensure HTTPS access. Browser camera, mic, and screen recording capabilities are typically only available on `localhost` or HTTPS pages.
+Access at `http://localhost:8080`
 
-If deploying to a subpath (e.g., `https://example.com/tools/whiteboard/`), adjust Vite's `base` config accordingly, otherwise static asset paths may be incorrect. Default config assumes root path deployment.
+---
 
-## FAQ
+## 🛠️ Tech Stack
+
+- **Frontend**: React 19, TypeScript
+- **Build Tool**: Vite 7
+- **Whiteboard**: Excalidraw 0.18
+- **Recording**: WebCodecs API, mp4-muxer
+- **Video Processing**: FFmpeg.wasm (fallback)
+- **Computer Vision**: MediaPipe Tasks Vision
+- **Styling**: CSS Modules
+
+---
+
+## 📖 Documentation
+
+- **[Operation Guide](./public/docs/operation-guide.md)**: Step-by-step usage instructions
+- **[Deployment Guide](./DEPLOY.md)**: Server deployment details
+- **[Third-Party Notices](./THIRD_PARTY_NOTICES.md)**: License attributions
+
+---
+
+## 🤔 FAQ
 
 ### Can I use it on mobile?
 
-Mobile access shows a landing page. Currently designed for desktop browsers, mobile experience is under development.
+Currently optimized for desktop browsers. Mobile access shows a landing page with instructions. Mobile support is planned.
 
-### Why can't I open camera, mic, or screen recording?
+### Why can't I access camera/mic?
 
-Ensure the page runs on `localhost` or HTTPS, and browser has granted camera, mic, and screen recording permissions. On macOS, also grant browser access to camera, mic, and screen recording in System Settings.
+**Common solutions**:
+1. Ensure page runs on `localhost` or HTTPS
+2. Grant browser permissions when prompted
+3. On macOS: System Settings → Privacy & Security → Camera/Microphone
+4. Try Chrome/Edge (best compatibility)
 
-### Recording export failed?
+### Recording export failed
 
-Use latest Chrome or Edge, and ensure recording viewport width/height are even numbers. H.264 encoding typically requires even dimensions. The app attempts auto-correction, but use even numbers for custom dimensions.
+**Troubleshooting**:
+- Use latest Chrome/Edge
+- Ensure viewport width/height are **even numbers** (H.264 requirement)
+- Check available disk space
+- Try disabling browser extensions
 
-## License
+### How do I change the aspect ratio after creating slides?
 
-MIT License
+Delete existing slides and create new ones with desired aspect ratio. Slides are viewport-specific.
 
-This project uses open-source components under their respective licenses. See [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md) for details.
+### Can I record audio separately?
 
-Key dependencies:
-- [Excalidraw](https://github.com/excalidraw/excalidraw): Excellent open-source whiteboard editing
-- [mp4-muxer](https://github.com/Vanilagy/mp4-muxer): Browser-side MP4 muxing
-- [MediaPipe Tasks Vision](https://developers.google.com/mediapipe): Browser-side vision capabilities
+Currently records system audio + microphone together. For separate audio tracks, use external tools like OBS or Audacity.
+
+---
+
+## 🤝 Contributing
+
+Contributions welcome! Please:
+
+1. Fork the repository
+2. Create feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit changes (`git commit -m 'Add amazing feature'`)
+4. Push to branch (`git push origin feature/amazing-feature`)
+5. Open Pull Request
+
+---
+
+## 📝 License
+
+MIT License - see [LICENSE](./LICENSE) file for details.
+
+This project uses open-source components under their respective licenses:
+
+- **[Excalidraw](https://github.com/excalidraw/excalidraw)** (MIT): Whiteboard editing engine
+- **[mp4-muxer](https://github.com/Vanilagy/mp4-muxer)** (MIT): Browser-side MP4 muxing
+- **[MediaPipe](https://developers.google.com/mediapipe)** (Apache 2.0): Computer vision capabilities
+- **[FFmpeg.wasm](https://github.com/ffmpegwasm/ffmpeg.wasm)** (MIT): Video processing fallback
+
+See [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md) for complete list.
+
+---
+
+## 🙏 Acknowledgments
+
+Special thanks to:
+- [Excalidraw](https://excalidraw.com) team for the excellent whiteboard library
+- [Excalicord](https://www.excalicord.com/) for workflow inspiration
+- [smart-teleprompter](https://github.com/Voumellis/smart-teleprompter) for teleprompter concepts
+
+---
+
+## 📧 Support
+
+- **Issues**: [GitHub Issues](https://github.com/idonecc/whiteboard-recorder/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/idonecc/whiteboard-recorder/discussions)
+
+---
+
+Made with ❤️ for educators and content creators
