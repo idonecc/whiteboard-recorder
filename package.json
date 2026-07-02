@@ -1,0 +1,51 @@
+{
+  "name": "whiteboard-recorder",
+  "private": false,
+  "version": "1.0.0",
+  "description": "Web-based whiteboard recording tool for course explanations and product demos",
+  "homepage": "https://aia.bj.cn/whiteboard-recorder",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/idonecc/whiteboard-recorder.git"
+  },
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@excalidraw/excalidraw": "^0.18.0",
+    "@ffmpeg/ffmpeg": "^0.12.15",
+    "@ffmpeg/util": "^0.12.2",
+    "@mediapipe/tasks-vision": "^0.10.35",
+    "@plantuml/core": "^1.2026.6",
+    "es6-promise-pool": "^2.5.0",
+    "mermaid": "^11.16.0",
+    "mp4-muxer": "^5.2.2",
+    "posthog-js": "^1.335.4",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
+    "vega": "^6.2.0",
+    "vega-lite": "^6.4.3",
+    "vite-plugin-commonjs": "^0.10.4"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.46.4",
+    "vite": "^7.2.4"
+  }
+}
