@@ -532,8 +532,6 @@ const WEBCAM_BUBBLE_SIDEBAR_RIGHT_RATIO = 0.26;
 const WEBCAM_QUICK_PANEL_WIDTH = 236;
 const WEBCAM_QUICK_PANEL_HEIGHT = 164;
 const WEBCAM_QUICK_PANEL_MARGIN = 16;
-const EXPORT_WATERMARK_PREFIX = 'TO';
-const EXPORT_WATERMARK_TEXT = '李祥瑞 · 万涂幻象';
 const TELEPROMPTER_MIN_WIDTH = 360;
 const TELEPROMPTER_MAX_WIDTH = 560;
 const TELEPROMPTER_FRAME_MARGIN = 22;
@@ -659,80 +657,6 @@ type CameraFocusPoint = {
 const clampNumber = (value: number, min: number, max: number) => (
   Math.min(Math.max(value, min), max)
 );
-
-type WatermarkBounds = {
-  x: number;
-  y: number;
-  width: number;
-  height: number;
-};
-
-const drawExportWatermark = (ctx: CanvasRenderingContext2D, bounds: WatermarkBounds) => {
-  const scale = clampNumber(Math.min(bounds.width, bounds.height) / 1080, 0.72, 1.25);
-  const fontFamily = '-apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Noto Sans SC", "Segoe UI", sans-serif';
-  const textFontSize = Math.round(20 * scale);
-  const prefixFontSize = Math.round(12 * scale);
-  const pillHeight = Math.round(44 * scale);
-  const outerPaddingX = Math.round(12 * scale);
-  const gap = Math.round(10 * scale);
-  const margin = Math.round(28 * scale);
-
-  ctx.save();
-  ctx.textBaseline = 'middle';
-
-  ctx.font = `650 ${textFontSize}px ${fontFamily}`;
-  const textWidth = ctx.measureText(EXPORT_WATERMARK_TEXT).width;
-  ctx.font = `750 ${prefixFontSize}px ${fontFamily}`;
-  const prefixTextWidth = ctx.measureText(EXPORT_WATERMARK_PREFIX).width;
-
-  const prefixWidth = Math.round(prefixTextWidth + 22 * scale);
-  const prefixHeight = Math.round(24 * scale);
-  const pillWidth = Math.round(outerPaddingX * 2 + prefixWidth + gap + textWidth + 4 * scale);
-  const pillX = bounds.x + bounds.width - pillWidth - margin;
-  const pillY = bounds.y + bounds.height - pillHeight - margin;
-  const radius = Math.round(14 * scale);
-
-  ctx.shadowColor = 'rgba(15, 23, 42, 0.18)';
-  ctx.shadowBlur = Math.round(18 * scale);
-  ctx.shadowOffsetY = Math.round(5 * scale);
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.82)';
-  ctx.beginPath();
-  ctx.roundRect(pillX, pillY, pillWidth, pillHeight, radius);
-  ctx.fill();
-
-  ctx.shadowColor = 'transparent';
-  ctx.lineWidth = Math.max(1, scale);
-  ctx.strokeStyle = 'rgba(15, 23, 42, 0.10)';
-  ctx.stroke();
-
-  const prefixX = pillX + outerPaddingX;
-  const prefixY = pillY + (pillHeight - prefixHeight) / 2;
-
-  ctx.fillStyle = '#6c63e6';
-  ctx.beginPath();
-  ctx.roundRect(prefixX, prefixY, prefixWidth, prefixHeight, Math.round(9 * scale));
-  ctx.fill();
-
-  ctx.fillStyle = '#ffffff';
-  ctx.font = `750 ${prefixFontSize}px ${fontFamily}`;
-  ctx.textAlign = 'center';
-  ctx.fillText(
-    EXPORT_WATERMARK_PREFIX,
-    prefixX + prefixWidth / 2,
-    pillY + pillHeight / 2 + Math.round(0.5 * scale),
-  );
-
-  ctx.fillStyle = '#1f2933';
-  ctx.font = `650 ${textFontSize}px ${fontFamily}`;
-  ctx.textAlign = 'left';
-  ctx.fillText(
-    EXPORT_WATERMARK_TEXT,
-    prefixX + prefixWidth + gap,
-    pillY + pillHeight / 2 + Math.round(0.5 * scale),
-  );
-
-  ctx.restore();
-};
 
 const getStudioFilter = (settings: RecordingSettings) => (
   settings.cameraStudioLight ? 'brightness(1.12) contrast(1.1) saturate(1.06)' : 'none'
@@ -2350,13 +2274,6 @@ function App() {
         ctx.fill();
       }
     }
-
-    drawExportWatermark(ctx, {
-      x: contentX,
-      y: contentY,
-      width: contentW,
-      height: contentH,
-    });
 
     // Add frame to WebCodecs recorder if recording
     if (isRecordingRef.current && webCodecsRecorderRef.current && canvas) {
